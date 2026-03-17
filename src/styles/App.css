@@ -20,12 +20,21 @@ h1,
 h2 {
   margin: 0;
   padding: 0;
+  text-align: center;
 }
 
 .general,
 .education,
 .experience {
   width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.education div,
+.experience div {
+  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 5px;
