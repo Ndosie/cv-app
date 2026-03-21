@@ -18,8 +18,8 @@ function App() {
         company: "",
         title: "",
         responsibilities: "",
-        to_date: "",
         from_date: "",
+        to_date: "",
       },
     ],
   });
