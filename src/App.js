@@ -34,6 +34,10 @@ function App() {
   };
 
   const addItem = (section) => {
+    if (formData[section].length >= 5) {
+      alert("Maximum 5 entries are allowed");
+      return;
+    }
     const newItem =
       section === "education"
         ? { school: "", title: "", date: "" }
@@ -49,6 +53,10 @@ function App() {
   };
 
   const removeItem = (section, index) => {
+    if (formData[section].length <= 1) {
+      alert("At least 1 entry is required");
+      return;
+    }
     const updated = formData[section].filter((_, i) => i !== index);
 
     setFormData({ ...formData, [section]: updated });
