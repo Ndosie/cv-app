@@ -2,9 +2,11 @@ import "./styles/App.css";
 import Education from "./components/Education";
 import General from "./components/General";
 import Experience from "./components/Experience";
+import Review from "./components/Review";
 import { useState } from "react";
 
 function App() {
+  const [step, setStep] = useState(1);
   const [formData, setFormData] = useState({
     first_name: "",
     last_name: "",
@@ -21,6 +23,14 @@ function App() {
       },
     ],
   });
+
+  const nextStep = () => {
+    setStep(step + 1);
+  };
+
+  const prevStep = () => {
+    setStep(step - 1);
+  };
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -65,20 +75,39 @@ function App() {
   return (
     <div className="container">
       <h1 className="App-header">CV Application</h1>
-      <General formData={formData} handleChange={handleChange} />
-      <Education
-        formData={formData}
-        handleArrayChange={handleArrayChange}
-        addItem={addItem}
-        removeItem={removeItem}
-      />
-      <Experience
-        formData={formData}
-        handleArrayChange={handleArrayChange}
-        addItem={addItem}
-        removeItem={removeItem}
-      />
-      <button>Submit</button>
+      <div className="steps">
+        <span className={step === 1 ? "current" : ""}></span>
+        <span className={step === 2 ? "current" : ""}></span>
+        <span className={step === 3 ? "current" : ""}></span>
+        <span className={step === 4 ? "current" : ""}></span>
+      </div>
+      {step === 1 ? (
+        <General
+          formData={formData}
+          nextStep={nextStep}
+          handleChange={handleChange}
+        />
+      ) : step === 2 ? (
+        <Education
+          formData={formData}
+          prevStep={prevStep}
+          nextStep={nextStep}
+          handleArrayChange={handleArrayChange}
+          addItem={addItem}
+          removeItem={removeItem}
+        />
+      ) : step === 3 ? (
+        <Experience
+          formData={formData}
+          prevStep={prevStep}
+          nextStep={nextStep}
+          handleArrayChange={handleArrayChange}
+          addItem={addItem}
+          removeItem={removeItem}
+        />
+      ) : (
+        <Review formData={formData} prevStep={prevStep} />
+      )}
     </div>
   );
 }

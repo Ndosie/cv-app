@@ -1,4 +1,11 @@
-function Education({ formData, handleArrayChange, addItem, removeItem }) {
+function Education({
+  formData,
+  prevStep,
+  nextStep,
+  handleArrayChange,
+  addItem,
+  removeItem,
+}) {
   return (
     <div className="education">
       <h2>Education</h2>
@@ -37,6 +44,10 @@ function Education({ formData, handleArrayChange, addItem, removeItem }) {
         </div>
       ))}
       <button onClick={() => addItem("education")}>+ Add Education</button>
+      <div className="buttons">
+        <button onClick={() => prevStep()}>Back</button>
+        <button onClick={() => nextStep()}>Next</button>
+      </div>
     </div>
   );
 }

@@ -56,3 +56,22 @@ input[type="date"] {
 button {
   width: 600px;
 }
+
+.steps span {
+  display: inline-block;
+  height: 10px;
+  width: 130px;
+  background-color: gainsboro;
+  margin-left: 5px;
+  border-radius: 8px;
+}
+
+span.current {
+  background-color: gray;
+}
+
+.education div.buttons,
+.experience div.buttons {
+  display: flex;
+  flex-direction: row;
+}

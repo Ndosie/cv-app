@@ -1,4 +1,4 @@
-function Experience({ formData, handleArrayChange, addItem, removeItem }) {
+function Experience({ formData, prevStep, nextStep, handleArrayChange, addItem, removeItem }) {
   return (
     <div className="experience">
       <h2>Experience</h2>
@@ -57,6 +57,10 @@ function Experience({ formData, handleArrayChange, addItem, removeItem }) {
         </div>
       ))}
       <button onClick={() => addItem("experience")}>+ Add Experience</button>
+      <div className="buttons">
+        <button onClick={() => prevStep()}>Back</button>
+        <button onClick={() => nextStep()}>Next</button>
+      </div>
     </div>
   );
 }

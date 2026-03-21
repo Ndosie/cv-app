@@ -1,6 +1,4 @@
-import "../styles/General.css";
-
-function General({ formData, handleChange }) {
+function General({ formData, nextStep, handleChange }) {
   return (
     <div className="general">
       <h2>General Details</h2>
@@ -32,6 +30,7 @@ function General({ formData, handleChange }) {
         onChange={handleChange}
         placeholder="Phone Number"
       />
+      <button onClick={() => nextStep()}>Next</button>
     </div>
   );
 }
