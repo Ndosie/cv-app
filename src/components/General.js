@@ -8,6 +8,7 @@ function General({ formData, nextStep, handleChange }) {
         value={formData.first_name}
         onChange={handleChange}
         placeholder="First Name"
+        required
       />
       <input
         type="text"
@@ -15,6 +16,7 @@ function General({ formData, nextStep, handleChange }) {
         value={formData.last_name}
         onChange={handleChange}
         placeholder="Last Name"
+        required
       />
       <input
         type="email"
@@ -22,13 +24,15 @@ function General({ formData, nextStep, handleChange }) {
         value={formData.email}
         onChange={handleChange}
         placeholder="Email"
+        required
       />
       <input
         type="phone"
         name="phone"
         value={formData.phone}
         onChange={handleChange}
-        placeholder="Phone Number"
+        placeholder="Phone Number 255000000000"
+        required
       />
       <button onClick={() => nextStep()}>Next</button>
     </div>

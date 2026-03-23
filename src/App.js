@@ -25,6 +25,41 @@ function App() {
   });
 
   const nextStep = () => {
+    if (step === 1) {
+      if (
+        !formData.first_name ||
+        !formData.last_name ||
+        !formData.email ||
+        !formData.phone
+      ) {
+        alert("All fields are required");
+        return;
+      }
+    }
+
+    if (step === 2) {
+      if (
+        !formData.education[0].school ||
+        !formData.education[0].title ||
+        !formData.education[0].date
+      ) {
+        alert("All fields are required");
+        return;
+      }
+    }
+
+    if (step === 3) {
+      if (
+        !formData.experience[0].company ||
+        !formData.experience[0].title ||
+        !formData.experience[0].responsibilities ||
+        !formData.experience[0].from_date ||
+        !formData.experience[0].to_date
+      ) {
+        alert("All fields are required");
+        return;
+      }
+    }
     setStep(step + 1);
   };
 

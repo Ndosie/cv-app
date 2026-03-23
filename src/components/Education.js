@@ -17,6 +17,7 @@ function Education({
             placeholder="School Name"
             value={edu.school}
             onChange={(e) => handleArrayChange(e, index, "education")}
+            required
           />
           <input
             type="text"
@@ -24,6 +25,7 @@ function Education({
             placeholder="Title of study"
             value={edu.title}
             onChange={(e) => handleArrayChange(e, index, "education")}
+            required
           />
           <input
             type="text"
@@ -37,6 +39,7 @@ function Education({
             }}
             value={edu.date}
             onChange={(e) => handleArrayChange(e, index, "education")}
+            required
           />
           <button onClick={() => removeItem("education", index)}>
             - Remove Education

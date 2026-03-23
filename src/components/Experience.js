@@ -1,4 +1,11 @@
-function Experience({ formData, prevStep, nextStep, handleArrayChange, addItem, removeItem }) {
+function Experience({
+  formData,
+  prevStep,
+  nextStep,
+  handleArrayChange,
+  addItem,
+  removeItem,
+}) {
   return (
     <div className="experience">
       <h2>Experience</h2>
@@ -10,6 +17,7 @@ function Experience({ formData, prevStep, nextStep, handleArrayChange, addItem, 
             placeholder="Company Name"
             value={exp.company}
             onChange={(e) => handleArrayChange(e, index, "experience")}
+            required
           />
           <input
             type="text"
@@ -17,6 +25,7 @@ function Experience({ formData, prevStep, nextStep, handleArrayChange, addItem, 
             placeholder="Position Title"
             value={exp.title}
             onChange={(e) => handleArrayChange(e, index, "experience")}
+            required
           />
           <textarea
             name="responsibilities"
@@ -24,6 +33,7 @@ function Experience({ formData, prevStep, nextStep, handleArrayChange, addItem, 
             rows={10}
             value={exp.responsibilities}
             onChange={(e) => handleArrayChange(e, index, "experience")}
+            required
           ></textarea>
           <input
             type="text"
@@ -37,6 +47,7 @@ function Experience({ formData, prevStep, nextStep, handleArrayChange, addItem, 
             }}
             value={exp.from_date}
             onChange={(e) => handleArrayChange(e, index, "experience")}
+            required
           />
           <input
             type="text"
@@ -50,6 +61,7 @@ function Experience({ formData, prevStep, nextStep, handleArrayChange, addItem, 
             }}
             value={exp.to_date}
             onChange={(e) => handleArrayChange(e, index, "experience")}
+            required
           />
           <button onClick={() => removeItem("experience", index)}>
             - Remove Experience
