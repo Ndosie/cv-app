@@ -37,6 +37,7 @@ p {
   display: flex;
   flex-direction: column;
   gap: 5px;
+  padding: 8px;
 }
 
 .education div,
